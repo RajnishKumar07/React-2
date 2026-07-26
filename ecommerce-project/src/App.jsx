@@ -6,7 +6,7 @@ import CheckoutPage from "./Pages/CheckoutPage/CheckoutPage";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage></HomePage>}></Route>
+      <Route index element={<HomePage></HomePage>}></Route>
       <Route path="checkout" element={<CheckoutPage />} />
     </Routes>
   );
