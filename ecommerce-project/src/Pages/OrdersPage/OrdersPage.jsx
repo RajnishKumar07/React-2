@@ -1,38 +1,12 @@
 import "./OrdersPage.css";
-import "../HomePage/header.css";
+import { Header } from "../../Components/Headers/Header";
+import { Link } from "react-router";
 
 export default function OrdersPage() {
   return (
     <>
       <title>Orders</title>
-      <div className="header">
-        <div className="left-section">
-          <a href="/" className="header-link">
-            <img className="logo" src="images/logo-white.png" />
-            <img className="mobile-logo" src="images/mobile-logo-white.png" />
-          </a>
-        </div>
-
-        <div className="middle-section">
-          <input className="search-bar" type="text" placeholder="Search" />
-
-          <button className="search-button">
-            <img className="search-icon" src="images/icons/search-icon.png" />
-          </button>
-        </div>
-
-        <div className="right-section">
-          <a className="orders-link header-link" href="/orders">
-            <span className="orders-text">Orders</span>
-          </a>
-
-          <a className="cart-link header-link" href="/checkout">
-            <img className="cart-icon" src="images/icons/cart-icon.png" />
-            <div className="cart-quantity">3</div>
-            <div className="cart-text">Cart</div>
-          </a>
-        </div>
-      </div>
+      <Header></Header>
 
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
@@ -80,11 +54,11 @@ export default function OrdersPage() {
               </div>
 
               <div className="product-actions">
-                <a href="/tracking">
+                <Link to="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
-                </a>
+                </Link>
               </div>
 
               <div className="product-image-container">
@@ -109,11 +83,11 @@ export default function OrdersPage() {
               </div>
 
               <div className="product-actions">
-                <a href="/tracking">
+                <to href="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
-                </a>
+                </to>
               </div>
             </div>
           </div>
@@ -158,11 +132,11 @@ export default function OrdersPage() {
               </div>
 
               <div className="product-actions">
-                <a href="/tracking">
+                <Link to="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
