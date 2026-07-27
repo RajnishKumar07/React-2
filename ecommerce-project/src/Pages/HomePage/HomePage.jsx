@@ -3,10 +3,10 @@ import axios from "axios";
 
 import "./HomePage.css";
 import { Fragment, useEffect, useState } from "react";
-export function HomePage() {
+export function HomePage({ cart }) {
   const [products, setProducts] = useState();
   useEffect(() => {
-    axios.get("http://localhost:3000/api/products").then((response) => {
+    axios.get("/api/products").then((response) => {
       setProducts(response.data);
     });
   }, []);
@@ -14,11 +14,11 @@ export function HomePage() {
   return (
     <>
       <title>Ecommerce Project</title>
-      <Header></Header>
+      <Header cart={cart}></Header>
 
       <div className="home-page">
         <div className="products-grid">
-          {products.map((product) => {
+          {products?.map((product) => {
             return (
               <Fragment key={product.id}>
                 <div className="product-container">
