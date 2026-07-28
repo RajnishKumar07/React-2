@@ -6,10 +6,13 @@ import { useEffect, useState } from "react";
 import { ProductGrid } from "./ProductGrid";
 export function HomePage({ cart }) {
   const [products, setProducts] = useState();
+
   useEffect(() => {
-    axios.get("/api/products").then((response) => {
+    const loadHomeData = async () => {
+      const response = await axios.get("/api/products");
       setProducts(response.data);
-    });
+    };
+    loadHomeData();
   }, []);
 
   return (
