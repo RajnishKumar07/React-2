@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { formatMoney } from "../../utils/money";
 import axios from "axios";
 
-export function PaymentSummary() {
+export function PaymentSummary({ cart }) {
   const [paymentSummary, setPaymentSummary] = useState();
   useEffect(() => {
     axios.get("/api/payment-summary").then((res) => {
       setPaymentSummary(res.data);
     });
-  }, []);
+  }, [cart]);
   return (
     <div className="payment-summary">
       <div className="payment-summary-title">Payment Summary</div>
