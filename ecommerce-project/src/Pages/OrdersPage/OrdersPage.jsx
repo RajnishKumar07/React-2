@@ -83,7 +83,11 @@ export default function OrdersPage({ cart }) {
                         </div>
 
                         <div className="product-actions">
-                          <Link to="/tracking">
+                          <Link
+                            to={{
+                              pathname: `/tracking/${order.id}/${product.productId}`,
+                            }}
+                          >
                             <button className="track-package-button button-secondary">
                               Track package
                             </button>
