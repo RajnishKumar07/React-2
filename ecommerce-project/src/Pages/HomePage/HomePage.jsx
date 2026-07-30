@@ -4,7 +4,7 @@ import axios from "axios";
 import "./HomePage.css";
 import { useEffect, useState } from "react";
 import { ProductGrid } from "./ProductGrid";
-export function HomePage({ cart }) {
+export function HomePage({ cart, loadCart }) {
   const [products, setProducts] = useState();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export function HomePage({ cart }) {
       <Header cart={cart}></Header>
 
       <div className="home-page">
-        <ProductGrid products={products}></ProductGrid>
+        <ProductGrid products={products} loadCart={loadCart}></ProductGrid>
       </div>
     </>
   );

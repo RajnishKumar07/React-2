@@ -8,7 +8,7 @@ export function PaymentSummary() {
     axios.get("/api/payment-summary").then((res) => {
       setPaymentSummary(res.data);
     });
-  });
+  }, []);
   return (
     <div className="payment-summary">
       <div className="payment-summary-title">Payment Summary</div>
